@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Casino</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="clock" class="section"></div>
+        <div id="casinoStatus" class="section"></div>
+
+        <!-- Användaruppgifter -->
+        <div class="section">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required><br><br>
+            <label for="age">Age:</label>
+            <input type="text" id="age" placeholder="Enter your age" required>
+            <label for="money">Money to play:</label>
+            <input type="text" id="money" placeholder="Enter money amount" required>
+            <button onclick="registerUser()">Register</button>
+        </div>
+
+        <!-- Speltimer -->
+        <div class="section">
+            <div id="gameTimer"></div>
+            <label for="gameTime">Choose game time:</label>
+            <select id="gameTime">
+                <option value="7200">2 hours</option>
+                <option value="3600">1 hour</option>
+                <option value="1800">30 minutes</option>
+                <option value="900">15 minutes</option>
+                <option value="300">5 minutes</option>
+            </select>
+            <button onclick="startGameTimer()">Start Game Timer</button>
+        </div>
+
+        <!--Välj tema-->
+        <div class="theme-container section">
+            <label for="themeSelector">Choose Theme:</label>
+            <select id="themeSelector" onchange="changeTheme()">
+                <option value="default">Default</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="red">Red</option>
+            </select>
+        </div>
+
+        <!--Ändra textfärg-->
+        <div class="color-mixer section">
+            <label for="textColor">Text Color:</label>
+            <input type="range" id="textColor" min="0" max="255" value="0" oninput="changeTextColor()">
+        </div>
+
+        <div id="gallery" class="section">
+            <div class="thumbnail" data-image="jump.jpg" style="background-image: url('JumpThumb.jpg')"></div>
+            <div class="thumbnail" data-image="happyCouple.jpg" style="background-image: url('happyCoupleThumb.jpg')"></div>
+            <div class="thumbnail" data-image="casino.jpg" style="background-image: url('casinoThumb.jpg')"></div>
+
+            <!--galleriet-->
+            <div class="lightbox" id="lightbox">
+                <span class="close" onclick="closeLightbox()">×</span>
+                <img class="lightbox-content" id="lightbox-img">
+            </div>
+        </div>
+            <!-- kortspel -->
+        <div class="memory-game section">
+            <div class="card" data-name="card1">
+                <img src="./img/aceSpade.png" alt="Ace of Spades">
+            </div>
+            <div class="card" data-name="card1">
+                <img src="./img/aceSpade.png" alt="Ace of Spades">
+            </div>
+            <div class="card" data-name="card2">
+                <img src="./img/aceClubs.png" alt="Ace of Clubs">
+            </div>
+            <div class="card" data-name="card2">
+                <img src="./img/aceClubs.png" alt="Ace of Clubs">
+            </div>
+            <div class="card" data-name="card3">
+                <img src="./img/aceDiamond.png" alt="Ace of Diamonds">
+            </div>
+            <div class="card" data-name="card3">
+                <img src="./img/aceDiamond.png" alt="Ace of Diamonds">
+            </div>
+            <div class="card" data-name="card4">
+                <img src="./img/aceHeart.jpg" alt="Ace of Hearts">
+            </div>
+            <div class="card" data-name="card4">
+                <img src="./img/aceHeart.jpg" alt="Ace of Hearts">
+            </div>
+            <div class="card" data-name="joker1">
+                <img src="./img/joker1.jpg" alt="Joker 1">
+            </div>
+            <div class="card" data-name="joker1">
+                <img src="./img/joker1.jpg" alt="Joker 1">
+            </div>
+            <div class="card" data-name="joker2">
+                <img src="./img/joker2.png" alt="Joker 2">
+            </div>
+            <div class="card" data-name="joker2">
+                <img src="./img/joker2.png" alt="Joker 2">
+            </div>
+        </div>
+    </div>
+
+    <script src="clock.js"></script>
+    <script src="timer.js"></script>
+    <script src="script.js"></script>
+    <script src="gallery.js"></script>
+    <script src="card.js"></script>
+</body>
+
+</html>
